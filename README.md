@@ -6,7 +6,7 @@ That file should look like
 
 ```php
 <?php 
-$api_key = '<whatever your api key is';
+$api_key = '<whatever your api key is>';
 ```
 
 You may be wondering, is this secure?  To which the answer is... reasonably.  It's pretty good, because to get at your key directly they have to access parts of your filesystem that're not in your document root.  In that sense, it's as secure as your server.  However, you're also transmitting it over TLS, so it's as secure as the TLS you're using.  That *should* be fine, but remember that you're transmitting a permanent token (permanent until you revoke it, of course), so if it's ever revealed they can use it.
